@@ -58,6 +58,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Networking\RTSNetworkManagerScript.cs" />
     <Compile Include="Assets\Scripts\Units\UnitMovmentScript.cs" />
+    <Compile Include="Assets\Scripts\Buildings\UnitSpawnerScript.cs" />
+    <Compile Include="Assets\Scripts\Units\UnitScript.cs" />
+    <Compile Include="Assets\Scripts\Units\UnitSelectionHandlerScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
@@ -290,17 +293,17 @@
     <Reference Include="UnityEditor.UnityConnectModule">
       <HintPath>C:\Users\Sebastian\OneDrive\Desktop\Unity\2020.3.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CecilX">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.CecilX.Rocks">
       <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CecilX.Mdb">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.CecilX.Pdb">
       <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX.Mdb">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Users\Sebastian\OneDrive\Desktop\Unity\2020.3.2f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
@@ -649,6 +652,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Mirror.csproj">
+      <Project>{7F81BD04-229C-6D5A-9EBC-88BC16362E11}</Project>
+      <Name>Mirror</Name>
+    </ProjectReference>
+    <ProjectReference Include="kcp2k.csproj">
+      <Project>{C033F123-1E95-6CF0-204B-54AD4C63ACE1}</Project>
+      <Name>kcp2k</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{0CB439A9-5007-095D-2A97-9EAF38F7C4BA}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -672,6 +683,10 @@
     <ProjectReference Include="Unity.Sysroot.Linux_x86_64.csproj">
       <Project>{B04CAE30-9205-C86C-1FC8-70674958F8B3}</Project>
       <Name>Unity.Sysroot.Linux_x86_64</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.csproj">
+      <Project>{CCD688CE-C0DD-0343-70F0-9CF86E9D7CBD}</Project>
+      <Name>Mirror.Examples</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.ProBuilder.AddOns.Editor.csproj">
       <Project>{3ACA0C2E-52C7-4D4F-D65C-BB38997BD1A2}</Project>
@@ -713,9 +728,17 @@
       <Project>{6B0CE9CE-1AB1-3614-7B0D-93DFD1DD6D99}</Project>
       <Name>Unity.ProGrids.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Mirror.Cloud.csproj">
+      <Project>{50A188DB-B0BD-E48B-185B-15B18C5C84C8}</Project>
+      <Name>Mirror.Cloud</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
       <Project>{EC393880-418E-EAD5-E5EF-70E3F85C3F0B}</Project>
       <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Weaver.csproj">
+      <Project>{9C9C97B8-0D9B-5D52-511A-FF8FE096ED1A}</Project>
+      <Name>Mirror.Weaver</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Mathematics.csproj">
       <Project>{2CE30371-6140-5541-80D7-267A6CD0804E}</Project>
@@ -753,57 +776,13 @@
       <Project>{37B05DD0-B9E6-9F0C-3686-12A636B94EF6}</Project>
       <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
-      <Project>{EC478702-0627-CA42-4D17-5B2381EF04B8}</Project>
-      <Name>Unity.Mathematics.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.ProGrids.csproj">
-      <Project>{7C94BE04-3FBA-E8DA-26D1-7423B8DFF87C}</Project>
-      <Name>Unity.ProGrids</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
-      <Project>{32F30F66-A0D7-40CA-D83A-4A46490A7ADE}</Project>
-      <Name>Unity.RenderPipelines.Core.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.SysrootPackage.Editor.csproj">
-      <Project>{B4481B8A-1A3F-CF98-8550-C322B00575CA}</Project>
-      <Name>Unity.SysrootPackage.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="kcp2k.csproj">
-      <Project>{C033F123-1E95-6CF0-204B-54AD4C63ACE1}</Project>
-      <Name>kcp2k</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Weaver.csproj">
-      <Project>{9C9C97B8-0D9B-5D52-511A-FF8FE096ED1A}</Project>
-      <Name>Mirror.Weaver</Name>
-    </ProjectReference>
     <ProjectReference Include="Mirror.Editor.csproj">
       <Project>{6A401AC6-5C9D-0089-4512-FFE00E40058A}</Project>
       <Name>Mirror.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Telepathy.csproj">
-      <Project>{0CBE4B43-75C3-D159-F32C-F5E92CC54BF7}</Project>
-      <Name>Telepathy</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Cloud.csproj">
-      <Project>{50A188DB-B0BD-E48B-185B-15B18C5C84C8}</Project>
-      <Name>Mirror.Cloud</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Examples.Cloud.GUI.csproj">
-      <Project>{46BB2051-099F-24C2-7D8A-1CAA6BF71DCA}</Project>
-      <Name>Mirror.Examples.Cloud.GUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Components.csproj">
-      <Project>{66EF974E-2ACD-0C0D-6BBC-209A57FF4BCE}</Project>
-      <Name>Mirror.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Examples.csproj">
-      <Project>{CCD688CE-C0DD-0343-70F0-9CF86E9D7CBD}</Project>
-      <Name>Mirror.Examples</Name>
-    </ProjectReference>
-    <ProjectReference Include="Mirror.Examples.Cloud.Pong.csproj">
-      <Project>{965240D5-5C04-75B9-F41B-746EF98FC676}</Project>
-      <Name>Mirror.Examples.Cloud.Pong</Name>
+    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
+      <Project>{EC478702-0627-CA42-4D17-5B2381EF04B8}</Project>
+      <Name>Unity.Mathematics.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.CompilerSymbols.csproj">
       <Project>{CC057948-2EC0-9898-D004-993BAF608990}</Project>
@@ -813,13 +792,69 @@
       <Project>{42588B09-99B2-D679-6DBC-04F6F8817E5E}</Project>
       <Name>Mirror.Authenticators</Name>
     </ProjectReference>
-    <ProjectReference Include="Mirror.csproj">
-      <Project>{7F81BD04-229C-6D5A-9EBC-88BC16362E11}</Project>
-      <Name>Mirror</Name>
+    <ProjectReference Include="Telepathy.csproj">
+      <Project>{0CBE4B43-75C3-D159-F32C-F5E92CC54BF7}</Project>
+      <Name>Telepathy</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.Cloud.GUI.csproj">
+      <Project>{46BB2051-099F-24C2-7D8A-1CAA6BF71DCA}</Project>
+      <Name>Mirror.Examples.Cloud.GUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ProGrids.csproj">
+      <Project>{7C94BE04-3FBA-E8DA-26D1-7423B8DFF87C}</Project>
+      <Name>Unity.ProGrids</Name>
     </ProjectReference>
     <ProjectReference Include="SimpleWebTransport.csproj">
       <Project>{D949DE49-0C9E-0D70-A280-E187B1DC3B83}</Project>
       <Name>SimpleWebTransport</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
+      <Project>{32F30F66-A0D7-40CA-D83A-4A46490A7ADE}</Project>
+      <Name>Unity.RenderPipelines.Core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Components.csproj">
+      <Project>{66EF974E-2ACD-0C0D-6BBC-209A57FF4BCE}</Project>
+      <Name>Mirror.Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.SysrootPackage.Editor.csproj">
+      <Project>{B4481B8A-1A3F-CF98-8550-C322B00575CA}</Project>
+      <Name>Unity.SysrootPackage.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Mirror.Examples.Cloud.Pong.csproj">
+      <Project>{965240D5-5C04-75B9-F41B-746EF98FC676}</Project>
+      <Name>Mirror.Examples.Cloud.Pong</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Path.Editor.csproj">
+      <Project>{8417A90E-7EC2-AC74-718E-E7406F258E71}</Project>
+      <Name>Unity.2D.Path.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Editor.csproj">
+      <Project>{AB7B4120-332D-574D-6A82-6EBFD719E1A8}</Project>
+      <Name>Unity.2D.Common.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
+      <Project>{C67F0733-DCDF-160D-9382-E1A7C9B01D3D}</Project>
+      <Name>Unity.2D.Common.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
+      <Project>{B4EDA802-BDCF-6A46-96A2-F88C2130F735}</Project>
+      <Name>Unity.2D.SpriteShape.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
+      <Project>{955B1E95-BF6E-8F4F-460C-77C5E5BD84C5}</Project>
+      <Name>Unity.InternalAPIEngineBridge.001</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
+      <Project>{6416FE44-00D9-AAA7-1D42-A95FD3D5EC7D}</Project>
+      <Name>Unity.InternalAPIEditorBridge.001</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{732DAC4B-7803-FDDA-81A9-2A863352ABE5}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj">
+      <Project>{24408B74-9772-79E0-6819-568E3F2ABA83}</Project>
+      <Name>Unity.2D.SpriteShape.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

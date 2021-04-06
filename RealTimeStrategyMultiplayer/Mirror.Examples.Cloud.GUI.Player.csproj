@@ -56,14 +56,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\NetworkManagerListServer.cs" />
+    <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\QuitButtonHUD.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\ServerListManager.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\ApiUpdater.cs" />
-    <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\QuitButtonHUD.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\ServerListUI.cs" />
+    <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\InstantiateNetworkManager.cs" />
+    <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\NetworkManagerListServer.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\QuickListServerDebug.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\ServerListUIItem.cs" />
-    <Compile Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\InstantiateNetworkManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Examples\Cloud\GUI\Scripts\Mirror.Examples.Cloud.GUI.asmdef" />

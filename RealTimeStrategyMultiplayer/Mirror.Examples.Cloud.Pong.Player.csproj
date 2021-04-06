@@ -56,10 +56,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Mirror\Examples\Cloud\PongWithListServer\Scripts\Ball.cs" />
-    <Compile Include="Assets\Mirror\Examples\Cloud\PongWithListServer\Scripts\BallManager.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\PongWithListServer\Scripts\NetworkManagerListServerPong.cs" />
     <Compile Include="Assets\Mirror\Examples\Cloud\PongWithListServer\Scripts\Player.cs" />
+    <Compile Include="Assets\Mirror\Examples\Cloud\PongWithListServer\Scripts\BallManager.cs" />
+    <Compile Include="Assets\Mirror\Examples\Cloud\PongWithListServer\Scripts\Ball.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Examples\Cloud\PongWithListServer\Scripts\Mirror.Examples.Cloud.Pong.asmdef" />

@@ -57,14 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\Classes\Model.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\Classes\Polygon.cs" />
+    <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\Classes\Node.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\CSG.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\Classes\VertexUtility.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\Classes\VertexAttributes.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\AssemblyInfo.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\Classes\Vertex.cs" />
-    <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\Classes\Polygon.cs" />
     <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\Classes\Plane.cs" />
-    <Compile Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\Classes\Node.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Library\PackageCache\com.unity.probuilder@4.5.0\External\CSG\Unity.ProBuilder.Csg.asmdef" />
