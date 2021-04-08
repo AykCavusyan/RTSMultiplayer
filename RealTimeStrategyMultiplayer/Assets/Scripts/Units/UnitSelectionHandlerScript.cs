@@ -8,7 +8,7 @@ public class UnitSelectionHandlerScript : MonoBehaviour
     [SerializeField] private LayerMask layerMask = new LayerMask();
 
     private Camera mainCamera;
-    private List<UnitScript> selectedUnits = new List<UnitScript>();
+    public List<UnitScript> SelectedUnits = new List<UnitScript>();
 
 
     private void Start()
@@ -21,7 +21,12 @@ public class UnitSelectionHandlerScript : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
+            foreach (UnitScript selectedUnit in SelectedUnits)
+            {
+                selectedUnit.Deselect();
+            }
 
+            SelectedUnits.Clear();
         }
 
         else if (Mouse.current.leftButton.wasReleasedThisFrame)
@@ -34,7 +39,7 @@ public class UnitSelectionHandlerScript : MonoBehaviour
     {
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
         
-        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
+        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask))
         {
             return;
         }
@@ -49,9 +54,9 @@ public class UnitSelectionHandlerScript : MonoBehaviour
             return;
         }
 
-        selectedUnits.Add(unitscript);
+        SelectedUnits.Add(unitscript);
 
-        foreach (UnitScript selectedUnit in selectedUnits)
+        foreach (UnitScript selectedUnit in SelectedUnits)
         {
             selectedUnit.Select();
         }

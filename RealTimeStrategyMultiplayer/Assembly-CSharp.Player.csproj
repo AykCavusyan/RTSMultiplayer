@@ -56,11 +56,13 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Networking\RTSNetworkManagerScript.cs" />
-    <Compile Include="Assets\Scripts\Units\UnitMovmentScript.cs" />
-    <Compile Include="Assets\Scripts\Buildings\UnitSpawnerScript.cs" />
     <Compile Include="Assets\Scripts\Units\UnitScript.cs" />
+    <Compile Include="Assets\Scripts\Networking\RTSNetworkManagerScript.cs" />
     <Compile Include="Assets\Scripts\Units\UnitSelectionHandlerScript.cs" />
+    <Compile Include="Assets\Scripts\Buildings\UnitSpawnerScript.cs" />
+    <Compile Include="Assets\Scripts\Units\UnitMovmentScript.cs" />
+    <Compile Include="Assets\Scripts\Units\UnitCommandGiver.cs" />
+    <Compile Include="Assets\Scripts\Networking\RTSPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
@@ -284,6 +286,15 @@
     <Reference Include="Unity.Searcher.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Path.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
@@ -320,26 +331,17 @@
     <Reference Include="Mirror.CompilerSymbols">
       <HintPath>Library\ScriptAssemblies\Mirror.CompilerSymbols.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.SysrootPackage.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.SysrootPackage.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Users\Sebastian\OneDrive\Desktop\Unity\2020.3.2f1\Editor\Data\MonoBleedingEdge\lib\mono\4.7.1-api\mscorlib.dll</HintPath>
@@ -688,6 +690,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
+      <Project>{955B1E95-BF6E-8F4F-460C-77C5E5BD84C5}</Project>
+      <Name>Unity.InternalAPIEngineBridge.001</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.csproj">
       <Project>{7F81BD04-229C-6D5A-9EBC-88BC16362E11}</Project>
       <Name>Mirror</Name>
@@ -712,10 +718,6 @@
       <Project>{0A3B83AE-AA88-48DF-9576-34D3991ED570}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
-      <Project>{DD71E530-1BDE-2E6F-A647-5736119FF1A5}</Project>
-      <Name>Unity.RenderPipelines.Core.Runtime</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.ProBuilder.csproj">
       <Project>{220497DF-39C2-33A5-6595-1CDD3B36DCB1}</Project>
       <Name>Unity.ProBuilder</Name>
@@ -723,6 +725,10 @@
     <ProjectReference Include="Unity.InputSystem.csproj">
       <Project>{A012BF36-51F3-6A09-99BE-58F5D956171B}</Project>
       <Name>Unity.InputSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
+      <Project>{DD71E530-1BDE-2E6F-A647-5736119FF1A5}</Project>
+      <Name>Unity.RenderPipelines.Core.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
       <Project>{263922CC-BB4D-8E2F-09D2-2979D7052A97}</Project>
@@ -752,6 +758,10 @@
       <Project>{37B05DD0-B9E6-9F0C-3686-12A636B94EF6}</Project>
       <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
+      <Project>{C67F0733-DCDF-160D-9382-E1A7C9B01D3D}</Project>
+      <Name>Unity.2D.Common.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.Authenticators.csproj">
       <Project>{42588B09-99B2-D679-6DBC-04F6F8817E5E}</Project>
       <Name>Mirror.Authenticators</Name>
@@ -772,6 +782,10 @@
       <Project>{D949DE49-0C9E-0D70-A280-E187B1DC3B83}</Project>
       <Name>SimpleWebTransport</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
+      <Project>{B4EDA802-BDCF-6A46-96A2-F88C2130F735}</Project>
+      <Name>Unity.2D.SpriteShape.Runtime</Name>
+    </ProjectReference>
     <ProjectReference Include="Mirror.Components.csproj">
       <Project>{66EF974E-2ACD-0C0D-6BBC-209A57FF4BCE}</Project>
       <Name>Mirror.Components</Name>
@@ -779,18 +793,6 @@
     <ProjectReference Include="Mirror.Examples.Cloud.Pong.csproj">
       <Project>{965240D5-5C04-75B9-F41B-746EF98FC676}</Project>
       <Name>Mirror.Examples.Cloud.Pong</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
-      <Project>{C67F0733-DCDF-160D-9382-E1A7C9B01D3D}</Project>
-      <Name>Unity.2D.Common.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
-      <Project>{B4EDA802-BDCF-6A46-96A2-F88C2130F735}</Project>
-      <Name>Unity.2D.SpriteShape.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
-      <Project>{955B1E95-BF6E-8F4F-460C-77C5E5BD84C5}</Project>
-      <Name>Unity.InternalAPIEngineBridge.001</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -204,8 +204,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Data\Legacy\UnlitMasterNode1.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Generation\Contexts\TargetPropertyGUIContext.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Drawing\Inspector\PropertyDrawers\SampleVirtualTextureNodePropertyDrawer.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Generation\Collections\IncludeCollection.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Generation\Attributes\GenerateBlocksAttribute.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Generation\Collections\IncludeCollection.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Generation\Utils\TargetUtils.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Data\Interfaces\IGeneratesFunction.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Data\Nodes\Input\Scene\ObjectNode.cs" />
@@ -566,8 +566,8 @@
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Data\Attributes\NeverAllowedByTargetAttribute.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Data\Legacy\SlotReference0.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Data\Graphs\Vector1MaterialSlot.cs" />
-    <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Data\Nodes\Input\Texture\SampleRawCubemapNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Generation\Descriptors\PragmaDescriptor.cs" />
+    <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Data\Nodes\Input\Texture\SampleRawCubemapNode.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Data\Legacy\SpriteUnlitMasterNode1.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Data\Graphs\Texture3DShaderProperty.cs" />
     <Compile Include="Library\PackageCache\com.unity.shadergraph@10.4.0\Editor\Generation\Data\FieldDependency.cs" />
